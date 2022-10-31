@@ -1,1 +1,1 @@
-# python-tkinter
+Mini projects based on Python tkinter
