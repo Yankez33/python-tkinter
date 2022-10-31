@@ -69,3 +69,28 @@ class Hand:
     def get_value(self):
         self.calculate_value()
         return self.value
+
+
+# Game State class
+class GameState:
+    def __init__(self):
+        self.deck = Deck()
+        self.deck.shuffle()
+
+        self.player_hand = Hand()
+        self.dealer_hand = Hand(dealer=True)
+
+        for i in range(2):
+            self.player_hand.add_card(self.deck.deal())
+            self.dealer_hand.add_card((self.deck.deal()))
+
+            self.has_winner = ' '
+
+    def player_is_over(self):
+        return self.player_hand.get_value() > 21
+    has_won = True
+
+
+root.mainloop()
+
+
